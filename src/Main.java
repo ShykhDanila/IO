@@ -14,7 +14,7 @@ public class Main {
         employee.serialize();
         employee.deserialize();
 
-       // System.out.println(employee.toString());
+        System.out.println(employee.toString());
         System.out.println("*****");
 
     }

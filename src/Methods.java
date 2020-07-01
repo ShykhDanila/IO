@@ -11,8 +11,8 @@ public class Methods {
     }
      public void deserialize() throws IOException, ClassNotFoundException {
          ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("Employee"));
-         employee = (Employee) objectInputStream.readObject();
-         System.out.println(employee.toString());
+         Employee employee1 = (Employee) objectInputStream.readObject();
+         System.out.println("deserialize() " + employee1.toString());
 
     }
 
