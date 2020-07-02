@@ -1,4 +1,6 @@
-public class Employee extends Methods{
+import java.io.Serializable;
+
+public class Employee implements Serializable {
 
     private String name;
     private int id;

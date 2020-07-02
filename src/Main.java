@@ -7,15 +7,47 @@ public class Main {
 
 
         Employee employee = new Employee();
-        employee.setId(777);
-        employee.setName("Petro");
-        employee.setSalary(15000);
+        Methods<Employee> employeeMethods = new Methods<>();
+        employee.setId(778);
+        employee.setName("Pavlo");
+        employee.setSalary(16000);
+        employeeMethods.serialize(employee);
+        employeeMethods.deserialize(employee);
 
-        employee.serialize();
-        employee.deserialize();
+        System.out.println("*************");
 
-        System.out.println(employee.toString());
-        System.out.println("*****");
+        Methods<List<Employee>> listMethods = new Methods<>();
+        List<Employee> employeeList = new ArrayList<>();
+
+        Employee employee1 = new Employee();
+        employee1.setId(558);
+        employee1.setName("Petro");
+        employee1.setSalary(20000);
+
+        Employee employee2 = new Employee();
+        employee2.setId(333);
+        employee2.setName("Ivan");
+        employee2.setSalary(12000);
+
+         Employee employee3 = new Employee();
+        employee3.setId(999);
+        employee3.setName("Sanya");
+        employee3.setSalary(22000);
+
+        employeeList.add(employee);
+        employeeList.add(employee1);
+        employeeList.add(employee2);
+        employeeList.add(employee3);
+
+       /* for (Employee em:
+             employeeList) {
+            listMethods.serialize(em);
+            listMethods.deserialize(em);
+        }
+        */
+
+        listMethods.serialize(employeeList);
+        listMethods.deserialize(employeeList);
 
     }
 }

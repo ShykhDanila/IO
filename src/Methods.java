@@ -1,18 +1,18 @@
 import java.io.*;
 
-public class Methods {
+public class Methods<E> implements Serializable {
 
-    private Employee employee;
+    E e;
 
-    public void serialize() throws IOException {
+    public void serialize(E e) throws IOException {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("Employee"));
-        objectOutputStream.writeObject(employee);
+        objectOutputStream.writeObject(e);
         objectOutputStream.close();
     }
-     public void deserialize() throws IOException, ClassNotFoundException {
+     public void deserialize(E e) throws IOException, ClassNotFoundException {
          ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("Employee"));
-         Employee employee1 = (Employee) objectInputStream.readObject();
-         System.out.println("deserialize() " + employee1.toString());
+         E e1 = (E) objectInputStream.readObject();
+         System.out.println("deserialize: " + e1.toString());
 
     }
 
